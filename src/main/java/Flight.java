@@ -18,6 +18,38 @@ public class Flight {
         this.time = time;
     }
 
+    public Plane getPlane() {
+        return plane;
+    }
+
+    public String getFlight() {
+        return flight;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public String getDeparture() {
+        return departure;
+    }
+
+    public int getPlaneCapacity(){
+        return plane.getCapacity();
+    }
+
+    public int passengerCount(){
+        return this.passengers.size();
+    }
+
+    public int emptySeats(){
+        return (this.plane.getCapacity() - this.passengerCount());
+    }
 
 
+    public void checkIn(Passenger passenger) {
+        if(emptySeats() > 0){
+            this.passengers.add(passenger);
+        }
+    }
 }
