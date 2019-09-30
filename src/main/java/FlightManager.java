@@ -7,8 +7,12 @@ public class FlightManager {
     //Assuming each bag is 10kg
 
 
-    public int passengerLuggageWeight(){
+    public int passengerLuggageWeightPerPerson(){
         int weightPerPerson = plane.getCargo() / plane.getCapacity();
         return weightPerPerson;
+    }
+
+    public int passengerLuggageWeight(){
+        return passenger.getNumBags() * 10;
     }
 }
